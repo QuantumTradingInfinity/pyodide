@@ -32,10 +32,10 @@ jobs:
       # This is cosmetically used in the deployment logs as the clickable link; it won't affect
       # our existing deployments since the pages are published based on what we have below in _site
       url: ${{ steps.deployment.outputs.page_url }}/api/v2/pyodide-cross-build-environments.json
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-32vcpu-ubuntu-2404-arm
     steps:
       - name: Checkout repository
-        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        uses: useblacksmith/checkout@v1 # v7.0.1
         with:
           persist-credentials: false
 
